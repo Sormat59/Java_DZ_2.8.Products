@@ -1,6 +1,6 @@
-package ru.netology.repositiry;
+package ru.netology.repository;
 
-import ru.netology.Product;
+import ru.netology.domain.Product;
 
 public class ProductRepository {
     private Product[] products = new Product[0];
@@ -14,7 +14,7 @@ public class ProductRepository {
         products = tmp;
     }
 
-    public Product[]returnAll() {
+    public Product[] returnAll() {
         return products;
     }
 

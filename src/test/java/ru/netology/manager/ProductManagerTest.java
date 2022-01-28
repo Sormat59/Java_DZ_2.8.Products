@@ -1,9 +1,13 @@
-package ru.netology;
+package ru.netology.manager;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ru.netology.repositiry.ProductRepository;
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
+import ru.netology.manager.ProductManager;
+import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -73,9 +77,10 @@ class ProductManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchNotExistsSmartphoneByManufacture() {
-        Product[] expected = new Product[]{s1,s2};
+        Product[] expected = new Product[]{s1, s2};
         Product[] actual = manager.searchBy(s1.getManufacturer());
 
         assertArrayEquals(expected, actual);
@@ -93,6 +98,7 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy(null);
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchNotExistProduct() {
 
@@ -100,7 +106,6 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy(indexZero.getName());
         assertArrayEquals(expected, actual);
     }
-
 }
 
 
